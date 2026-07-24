@@ -1,0 +1,158 @@
+import Link from "next/link";
+import { Mail, Phone, MapPin, Globe, ExternalLink } from "lucide-react";
+
+const footerLinks = {
+  services: [
+    { name: "AI Development", href: "/services/ai-development" },
+    { name: "Software Development", href: "/services/software-development" },
+    { name: "CBS Modernization", href: "/services/cbs-modernization" },
+    { name: "Cloud Solutions", href: "/services/cloud-solutions" },
+    { name: "Enterprise AI", href: "/services/enterprise-ai" },
+  ],
+  programs: [
+    { name: "AI Full Stack Java", href: "/programs/ai-full-stack-java" },
+    { name: "AI Data Engineering", href: "/programs/ai-data-engineering" },
+    { name: "AI & Machine Learning", href: "/programs/ai-machine-learning" },
+    { name: "Business Analyst", href: "/programs/business-analyst" },
+  ],
+  company: [
+    { name: "About Us", href: "/about" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
+    { name: "Success Stories", href: "/success-stories" },
+    { name: "Resources", href: "/resources" },
+  ],
+  legal: [
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Cookie Policy", href: "/cookies" },
+  ],
+};
+
+export function Footer() {
+  return (
+    <footer className="bg-brand-deep text-white">
+      {/* Main Footer */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Brand Column */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="flex items-center gap-2 mb-6">
+              <div className="h-8 w-8 rounded-lg bg-brand-gradient flex items-center justify-center">
+                <span className="text-white font-bold text-sm">AV</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold leading-tight">
+                  Agile<span className="text-brand-orange">Vision</span>
+                </span>
+                <span className="text-[10px] font-normal text-neutral-500 tracking-widest uppercase leading-tight">
+                  Technologies
+                </span>
+              </div>
+            </Link>
+            <p className="text-neutral-400 text-sm leading-relaxed mb-6 max-w-sm">
+              AI-powered technology company delivering enterprise software solutions while developing industry-ready AI professionals through our AI Center of Excellence.
+            </p>
+            <div className="space-y-3 text-sm text-neutral-400">
+              <a href="mailto:info.agilevision@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Mail className="h-4 w-4" />
+                info.agilevision@gmail.com
+              </a>
+              <a href="tel:+919929250909" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Phone className="h-4 w-4" />
+                +91 99292 50909
+              </a>
+              <div className="space-y-2">
+                <div className="flex items-start gap-2">
+                  <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <span>Business Bay, Tarabai Park, Kolhapur</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <span>HighStreet, Baner, Pune</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 mt-6">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
+                </svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-sm font-semibold text-white mb-4">Services</h3>
+            <ul className="space-y-3">
+              {footerLinks.services.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-sm text-neutral-400 hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Programs */}
+          <div>
+            <h3 className="text-sm font-semibold text-white mb-4">Programs</h3>
+            <ul className="space-y-3">
+              {footerLinks.programs.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-sm text-neutral-400 hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-sm font-semibold text-white mb-4">Company</h3>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-sm text-neutral-400 hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-neutral-800">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-neutral-500">
+              &copy; {new Date().getFullYear()} AgileVision Technologies Pvt. Ltd. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              {footerLinks.legal.map((link) => (
+                <Link key={link.name} href={link.href} className="text-sm text-neutral-500 hover:text-neutral-300 transition-colors">
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
