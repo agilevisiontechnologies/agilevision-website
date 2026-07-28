@@ -69,7 +69,7 @@ const programs = [
   },
   {
     title: "AI Data Engineering",
-    duration: "5 months",
+    duration: "6 months",
     mode: "Hybrid",
     highlights: ["Python + SQL", "Big Data Technologies", "Data Pipelines"],
     href: "/programs/ai-data-engineering",
@@ -83,7 +83,7 @@ const programs = [
   },
   {
     title: "Business Analyst",
-    duration: "4 months",
+    duration: "6 months",
     mode: "Hybrid",
     highlights: ["Requirements Analysis", "Data Visualization", "Agile Methods"],
     href: "/programs/business-analyst",
@@ -119,14 +119,56 @@ const testimonials = [
 ];
 
 const partners = [
-  "Microsoft",
-  "Google Cloud",
-  "AWS",
+  "Tata Consultancy Services (TCS)",
   "Infosys",
-  "TCS",
   "Wipro",
-  "HCL",
   "Tech Mahindra",
+  "Cognizant",
+  "Accenture",
+  "Capgemini",
+  "IBM India",
+  "LTIMindtree",
+  "Persistent Systems",
+  "Cybage Software",
+  "Zensar Technologies",
+  "KPIT Technologies",
+  "Mphasis",
+  "HSBC Technology India",
+  "BNY Mellon Technology",
+  "Deutsche Bank Technology Centre",
+  "Barclays Technology Centre",
+  "Amdocs",
+  "Virtusa",
+  "Deloitte",
+  "PwC India",
+  "KPMG India",
+  "EY GDS",
+  "NVIDIA",
+  "Red Hat",
+  "PTC Software",
+  "Siemens Digital Industries Software",
+  "Dassault Systèmes",
+  "Veritas Technologies",
+  "FIS Global",
+  "Fiserv",
+  "Avaloq",
+  "YASH Technologies",
+  "Atos",
+  "HCLTech",
+  "Hexaware Technologies",
+  "Birlasoft",
+  "Synechron",
+  "Globant",
+  "GlobalLogic",
+  "Thoughtworks",
+  "Rocket Software",
+  "Quick Heal Technologies",
+  "Harbinger Group",
+  "Talentica Software",
+  "TIBCO Software",
+  "Nihilent Technologies",
+  "Coditas",
+  "Xoriant Corporation",
 ];
 
 export default function Home() {
@@ -360,17 +402,28 @@ export default function Home() {
       </section>
 
       {/* Partners */}
-      <section className="py-16 border-y border-neutral-200">
+      <section className="py-16 border-y border-neutral-200 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm text-neutral-500 mb-8">
             Trusted by leading organizations
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {partners.map((partner) => (
-              <div key={partner} className="text-neutral-400 font-semibold text-lg">
-                {partner}
-              </div>
-            ))}
+        </div>
+        <div className="relative">
+          <div className="flex animate-marquee whitespace-nowrap">
+            {[...partners, ...partners].map((partner, index) => {
+              const initials = partner.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
+              return (
+                <div
+                  key={index}
+                  className="inline-flex flex-col items-center justify-center mx-3 px-6 py-4 border border-neutral-200 rounded-xl bg-white min-w-[140px]"
+                >
+                  <div className="w-12 h-12 rounded-full bg-brand-orange/10 flex items-center justify-center mb-2">
+                    <span className="text-brand-orange font-bold text-sm">{initials}</span>
+                  </div>
+                  <span className="text-neutral-600 font-medium text-xs text-center leading-tight">{partner}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

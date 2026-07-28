@@ -1,4 +1,4 @@
-import { Brain } from "lucide-react";
+import { Brain, LineChart, Cpu, Sparkles, TrendingUp, BarChart3, Eye, MessageSquare, Target } from "lucide-react";
 import { ProgramDetailTemplate } from "@/components/program-detail-template";
 
 const data = {
@@ -7,7 +7,7 @@ const data = {
   tagline: "AI Career Program",
   duration: "6 months",
   mode: "Hybrid",
-  batchStart: "January 2026",
+  batchStart: "Every Month",
   description:
     "Dive deep into AI and machine learning. Build intelligent systems using cutting-edge algorithms and frameworks.",
   heroDescription:
@@ -104,21 +104,49 @@ const data = {
       title: "Computer Vision Pipeline",
       description:
         "Build an end-to-end computer vision system for object detection and image classification.",
+      icon: Eye,
     },
     {
       title: "NLP Chatbot with RAG",
       description:
         "Create a retrieval-augmented generation chatbot using large language models.",
+      icon: MessageSquare,
     },
     {
       title: "Time Series Forecasting",
       description:
         "Develop a time series forecasting model for financial or business data.",
+      icon: LineChart,
     },
     {
       title: "ML Model Deployment",
       description:
         "Deploy ML models as scalable APIs with monitoring and A/B testing.",
+      icon: Cpu,
+    },
+    {
+      title: "AI-Powered Ad Targeting System",
+      description:
+        "Build an ML model that optimizes ad spend by predicting high-conversion audiences across platforms.",
+      icon: Target,
+    },
+    {
+      title: "Sentiment Analysis Engine",
+      description:
+        "Develop an NLP model analyzing brand sentiment across social media, reviews, and news in real-time.",
+      icon: Sparkles,
+    },
+    {
+      title: "Predictive Customer Lifetime Value",
+      description:
+        "Create an ML pipeline predicting customer LTV to optimize marketing budgets and retention strategies.",
+      icon: TrendingUp,
+    },
+    {
+      title: "Recommendation Engine",
+      description:
+        "Build a personalized product/content recommendation system using collaborative and content-based filtering.",
+      icon: BarChart3,
     },
   ],
   internship: {

@@ -1,13 +1,13 @@
-import { BarChart } from "lucide-react";
+import { BarChart, PieChart, FileText, TrendingUp, Users, Target, ClipboardList, BarChart3 } from "lucide-react";
 import { ProgramDetailTemplate } from "@/components/program-detail-template";
 
 const data = {
   icon: BarChart,
   title: "Business Analyst",
   tagline: "AI Career Program",
-  duration: "4 months",
+  duration: "6 months",
   mode: "Hybrid",
-  batchStart: "March 2026",
+  batchStart: "Every Month",
   description:
     "Bridge business and technology. Learn to analyze requirements, visualize data, and drive digital transformation.",
   heroDescription:
@@ -104,21 +104,49 @@ const data = {
       title: "Banking Process Optimization",
       description:
         "Analyze and optimize a banking workflow using data analysis and process modeling.",
+      icon: PieChart,
     },
     {
       title: "E-Commerce Analytics Dashboard",
       description:
         "Build a comprehensive analytics dashboard for an e-commerce business.",
+      icon: BarChart3,
     },
     {
       title: "Requirements Documentation",
       description:
         "Create complete requirements documentation for a software product.",
+      icon: FileText,
     },
     {
       title: "Digital Transformation Roadmap",
       description:
         "Develop a digital transformation strategy for a traditional business.",
+      icon: TrendingUp,
+    },
+    {
+      title: "Marketing Campaign ROI Analysis",
+      description:
+        "Analyze multi-channel marketing campaigns and build a BI dashboard for real-time ROI tracking.",
+      icon: Target,
+    },
+    {
+      title: "Customer Journey Mapping",
+      description:
+        "Map end-to-end customer journeys with pain points analysis and data-driven improvement recommendations.",
+      icon: Users,
+    },
+    {
+      title: "Market Research & Competitor Analysis",
+      description:
+        "Conduct comprehensive market research with competitor benchmarking and strategic positioning framework.",
+      icon: ClipboardList,
+    },
+    {
+      title: "Brand Performance Tracker",
+      description:
+        "Build a brand health dashboard tracking awareness, sentiment, and share of voice across channels.",
+      icon: BarChart,
     },
   ],
   internship: {

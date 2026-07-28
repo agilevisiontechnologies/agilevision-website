@@ -1,4 +1,4 @@
-import { Code } from "lucide-react";
+import { Code, ShoppingCart, BarChart3, Layers, MessageSquare, Share2, FileText, Target, Users } from "lucide-react";
 import { ProgramDetailTemplate } from "@/components/program-detail-template";
 
 const data = {
@@ -7,7 +7,7 @@ const data = {
   tagline: "AI Career Program",
   duration: "6 months",
   mode: "Hybrid",
-  batchStart: "January 2026",
+  batchStart: "Every Month",
   description:
     "Master full-stack development with AI integration. Build enterprise-grade applications using Java, Spring Boot, and modern AI frameworks.",
   heroDescription:
@@ -104,21 +104,49 @@ const data = {
       title: "AI-Powered E-Commerce Platform",
       description:
         "Build a full-stack e-commerce platform with AI-powered recommendations, search, and inventory management.",
+      icon: ShoppingCart,
     },
     {
       title: "Real-Time Analytics Dashboard",
       description:
         "Create a real-time analytics dashboard for enterprise data with streaming and visualization.",
+      icon: BarChart3,
     },
     {
       title: "Microservices Migration",
       description:
         "Migrate a monolithic application to microservices with AI-based monitoring.",
+      icon: Layers,
     },
     {
       title: "AI Chatbot for Enterprise",
       description:
         "Develop an intelligent chatbot integrated with enterprise systems for customer support.",
+      icon: MessageSquare,
+    },
+    {
+      title: "AI-Driven Social Media Marketing Platform",
+      description:
+        "Build a platform that uses AI to schedule, optimize, and analyze social media campaigns across multiple channels with sentiment analysis.",
+      icon: Share2,
+    },
+    {
+      title: "Personalized Content Marketing Engine",
+      description:
+        "Develop an AI-powered content recommendation system that delivers personalized blog posts, emails, and product content based on user behavior.",
+      icon: FileText,
+    },
+    {
+      title: "AI Marketing Automation Dashboard",
+      description:
+        "Create a marketing automation tool with AI-driven A/B testing, campaign performance tracking, and predictive lead scoring.",
+      icon: Target,
+    },
+    {
+      title: "Customer Segmentation & Targeting System",
+      description:
+        "Build an AI system that segments customers using clustering algorithms and provides targeted marketing strategies with ROI predictions.",
+      icon: Users,
     },
   ],
   internship: {

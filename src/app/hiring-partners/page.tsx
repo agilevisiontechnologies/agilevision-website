@@ -79,14 +79,56 @@ const stats = [
 ];
 
 const partners = [
-  "Microsoft",
-  "Google Cloud",
+  "Tata Consultancy Services (TCS)",
   "Infosys",
-  "TCS",
   "Wipro",
-  "HCL",
   "Tech Mahindra",
-  "Amazon",
+  "Cognizant",
+  "Accenture",
+  "Capgemini",
+  "IBM India",
+  "LTIMindtree",
+  "Persistent Systems",
+  "Cybage Software",
+  "Zensar Technologies",
+  "KPIT Technologies",
+  "Mphasis",
+  "HSBC Technology India",
+  "BNY Mellon Technology",
+  "Deutsche Bank Technology Centre",
+  "Barclays Technology Centre",
+  "Amdocs",
+  "Virtusa",
+  "Deloitte",
+  "PwC India",
+  "KPMG India",
+  "EY GDS",
+  "NVIDIA",
+  "Red Hat",
+  "PTC Software",
+  "Siemens Digital Industries Software",
+  "Dassault Systèmes",
+  "Veritas Technologies",
+  "FIS Global",
+  "Fiserv",
+  "Avaloq",
+  "YASH Technologies",
+  "Atos",
+  "HCLTech",
+  "Hexaware Technologies",
+  "Birlasoft",
+  "Synechron",
+  "Globant",
+  "GlobalLogic",
+  "Thoughtworks",
+  "Rocket Software",
+  "Quick Heal Technologies",
+  "Harbinger Group",
+  "Talentica Software",
+  "TIBCO Software",
+  "Nihilent Technologies",
+  "Coditas",
+  "Xoriant Corporation",
 ];
 
 export default function HiringPartnersPage() {
@@ -193,12 +235,23 @@ export default function HiringPartnersPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {partners.map((partner) => (
-              <div key={partner} className="h-24 border border-neutral-200 rounded-xl flex items-center justify-center">
-                <span className="text-neutral-400 font-semibold">{partner}</span>
-              </div>
-            ))}
+          <div className="relative overflow-hidden mt-8">
+            <div className="flex animate-marquee whitespace-nowrap">
+              {[...partners, ...partners].map((partner, index) => {
+                const initials = partner.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
+                return (
+                  <div
+                    key={index}
+                    className="inline-flex flex-col items-center justify-center mx-3 px-6 py-4 border border-neutral-200 rounded-xl bg-white min-w-[140px]"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-brand-orange/10 flex items-center justify-center mb-2">
+                      <span className="text-brand-orange font-bold text-sm">{initials}</span>
+                    </div>
+                    <span className="text-neutral-600 font-medium text-xs text-center leading-tight">{partner}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

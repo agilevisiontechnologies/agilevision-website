@@ -1,13 +1,13 @@
-import { Database } from "lucide-react";
+import { Database, TrendingUp, Users, BarChart3, Target, Share2, Zap, Globe, Cpu } from "lucide-react";
 import { ProgramDetailTemplate } from "@/components/program-detail-template";
 
 const data = {
   icon: Database,
   title: "AI Data Engineering",
   tagline: "AI Career Program",
-  duration: "5 months",
+  duration: "6 months",
   mode: "Hybrid",
-  batchStart: "February 2026",
+  batchStart: "Every Month",
   description:
     "Become a data engineering specialist. Learn to build scalable data pipelines and work with big data technologies.",
   heroDescription:
@@ -104,21 +104,49 @@ const data = {
       title: "Real-Time Analytics Pipeline",
       description:
         "Build a real-time data pipeline processing millions of events with Kafka and Spark Streaming.",
+      icon: Zap,
     },
     {
       title: "Cloud Data Warehouse",
       description:
         "Design and implement a cloud data warehouse with automated ETL and reporting.",
+      icon: Globe,
     },
     {
       title: "ML Feature Store",
       description:
         "Create a feature store for ML models with data versioning and quality checks.",
+      icon: Cpu,
     },
     {
       title: "Data Governance Platform",
       description:
         "Build a data catalog and governance platform for enterprise data management.",
+      icon: Database,
+    },
+    {
+      title: "Marketing Data Lakehouse",
+      description:
+        "Build a unified data lakehouse combining marketing data from social media, ads, and CRM for 360-degree customer views.",
+      icon: TrendingUp,
+    },
+    {
+      title: "Customer Behavior Analytics Pipeline",
+      description:
+        "Create a real-time pipeline tracking customer journey across touchpoints with predictive segmentation.",
+      icon: Users,
+    },
+    {
+      title: "Campaign Performance Dashboard",
+      description:
+        "Develop an automated data pipeline feeding real-time marketing campaign metrics and ROI analytics.",
+      icon: BarChart3,
+    },
+    {
+      title: "Lead Scoring Data Platform",
+      description:
+        "Build a data infrastructure for AI-driven lead scoring with automated qualification and routing.",
+      icon: Target,
     },
   ],
   internship: {

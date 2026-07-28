@@ -36,7 +36,7 @@ export interface ProgramPageData {
   whoShouldJoin: string[];
   curriculum: { module: string; topics: string[] }[];
   technologyStack: string[];
-  projects: { title: string; description: string }[];
+  projects: { title: string; description: string; icon?: LucideIcon }[];
   internship: {
     duration: string;
     description: string;
@@ -46,11 +46,6 @@ export interface ProgramPageData {
   careerPath: { role: string; experience: string; salary: string }[];
   placementAssistance: string[];
   faqs: { question: string; answer: string }[];
-  feeStructure?: {
-    installment: string;
-    amount: string;
-    deadline: string;
-  }[];
   relatedPrograms: { title: string; href: string }[];
 }
 
@@ -61,48 +56,57 @@ export function ProgramDetailTemplate({ data }: { data: ProgramPageData }) {
       {/* Hero */}
       <section className="bg-brand-deep py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <Badge
-              variant="outline"
-              className="border-brand-orange/30 text-brand-orange mb-6"
-            >
-              {data.tagline}
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {data.title}
-            </h1>
-            <p className="text-lg text-neutral-400 leading-relaxed mb-8">
-              {data.heroDescription}
-            </p>
-            <div className="flex flex-wrap gap-4 mb-8">
-              <div className="flex items-center gap-2 text-neutral-300">
-                <Clock className="h-5 w-5 text-brand-orange" />
-                <span>{data.duration}</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge
+                variant="outline"
+                className="border-brand-orange/30 text-brand-orange mb-6"
+              >
+                {data.tagline}
+              </Badge>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                {data.title}
+              </h1>
+              <p className="text-lg text-neutral-400 leading-relaxed mb-8">
+                {data.heroDescription}
+              </p>
+              <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex items-center gap-2 text-neutral-300">
+                  <Clock className="h-5 w-5 text-brand-orange" />
+                  <span>{data.duration}</span>
+                </div>
+                <div className="flex items-center gap-2 text-neutral-300">
+                  <MapPin className="h-5 w-5 text-brand-orange" />
+                  <span>{data.mode}</span>
+                </div>
+                <div className="flex items-center gap-2 text-neutral-300">
+                  <Calendar className="h-5 w-5 text-brand-orange" />
+                  <span>Batch starts: {data.batchStart}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-neutral-300">
-                <MapPin className="h-5 w-5 text-brand-orange" />
-                <span>{data.mode}</span>
-              </div>
-              <div className="flex items-center gap-2 text-neutral-300">
-                <Calendar className="h-5 w-5 text-brand-orange" />
-                <span>Batch starts: {data.batchStart}</span>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" asChild>
+                  <Link href="/contact">
+                    Apply Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-neutral-700 bg-transparent text-white hover:bg-neutral-800"
+                  asChild
+                >
+                  <Link href="/contact">Download Brochure</Link>
+                </Button>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild>
-                <Link href="/contact">
-                  Apply Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-neutral-700 text-white hover:bg-neutral-800"
-                asChild
-              >
-                <Link href="/contact">Download Brochure</Link>
-              </Button>
+            <div className="hidden lg:block">
+              <img
+                src="/hero-students.jpeg"
+                alt="Students learning AI"
+                className="rounded-2xl shadow-2xl w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
@@ -211,6 +215,11 @@ export function ProgramDetailTemplate({ data }: { data: ProgramPageData }) {
             {data.projects.map((project) => (
               <Card key={project.title} className="border-neutral-200">
                 <CardHeader>
+                  {project.icon && (
+                    <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-orange/10">
+                      <project.icon className="h-6 w-6 text-brand-orange" />
+                    </div>
+                  )}
                   <CardTitle className="text-lg">{project.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -351,51 +360,6 @@ export function ProgramDetailTemplate({ data }: { data: ProgramPageData }) {
         </div>
       </section>
 
-      {/* Fee Structure */}
-      {data.feeStructure && (
-        <section className="py-20 md:py-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mb-16">
-              <Badge variant="outline" className="mb-4">
-                Fee Structure
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-                Investment in Your Future
-              </h2>
-            </div>
-            <div className="max-w-2xl">
-              <Card className="border-neutral-200">
-                <CardContent className="pt-6">
-                  <div className="space-y-4">
-                    {data.feeStructure.map((fee) => (
-                      <div
-                        key={fee.installment}
-                        className="flex items-center justify-between py-2 border-b border-neutral-100 last:border-0"
-                      >
-                        <div>
-                          <span className="font-medium text-neutral-900">
-                            {fee.installment}
-                          </span>
-                          <span className="text-sm text-neutral-500 ml-2">
-                            ({fee.deadline})
-                          </span>
-                        </div>
-                        <span className="font-semibold text-neutral-900">
-                          {fee.amount}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-              <p className="text-sm text-neutral-500 mt-4">
-                * Scholarships and EMI options available. Contact us for details.
-              </p>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* FAQ */}
       <section className="py-20 md:py-28 bg-neutral-50">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -474,7 +438,7 @@ export function ProgramDetailTemplate({ data }: { data: ProgramPageData }) {
             <Button
               size="lg"
               variant="outline"
-              className="border-neutral-700 text-white hover:bg-neutral-800"
+              className="border-neutral-700 bg-transparent text-white hover:bg-neutral-800"
               asChild
             >
               <Link href="/contact">Book Career Assessment</Link>

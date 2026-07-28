@@ -21,7 +21,7 @@ const programs = [
     title: "AI Full Stack Java Engineer",
     duration: "6 months",
     mode: "Hybrid",
-    batchStart: "January 2026",
+    batchStart: "Every Month",
     highlights: [
       "Java + Spring Boot",
       "AI/ML Integration",
@@ -34,9 +34,9 @@ const programs = [
   {
     icon: Database,
     title: "AI Data Engineering",
-    duration: "5 months",
+    duration: "6 months",
     mode: "Hybrid",
-    batchStart: "February 2026",
+    batchStart: "Every Month",
     highlights: [
       "Python + SQL",
       "Big Data Technologies",
@@ -51,7 +51,7 @@ const programs = [
     title: "AI & Machine Learning",
     duration: "6 months",
     mode: "Hybrid",
-    batchStart: "January 2026",
+    batchStart: "Every Month",
     highlights: [
       "Deep Learning",
       "NLP",
@@ -64,9 +64,9 @@ const programs = [
   {
     icon: BarChart,
     title: "Business Analyst",
-    duration: "4 months",
+    duration: "6 months",
     mode: "Hybrid",
-    batchStart: "March 2026",
+    batchStart: "Every Month",
     highlights: [
       "Requirements Analysis",
       "Data Visualization",
@@ -241,7 +241,7 @@ export default function ProgramsPage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-neutral-700 text-white hover:bg-neutral-800" asChild>
+            <Button size="lg" variant="outline" className="border-neutral-700 bg-transparent text-white hover:bg-neutral-800" asChild>
               <Link href="/contact">
                 Download Brochure
               </Link>

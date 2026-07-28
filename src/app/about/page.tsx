@@ -303,7 +303,7 @@ export default function AboutPage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-neutral-700 text-white hover:bg-neutral-800" asChild>
+            <Button size="lg" variant="outline" className="border-neutral-700 bg-transparent text-white hover:bg-neutral-800" asChild>
               <Link href="/hiring-partners">
                 Become Hiring Partner
               </Link>
